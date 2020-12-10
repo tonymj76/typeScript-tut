@@ -1,43 +1,20 @@
-const how: string  = "tony"; // Not necessary because js infare types
-declare let something: string; //most not be initialized
-declare let h: unknown;
-h = 3;
-console.log(how)
-console.log(h)
+// unknow type
 
-// Objects
+let userInput: unknown;
+let userName : string;
 
-const person: {
-  name: string;
-  age: number;
-  role: [number, string]
-} = {
-  name: "jdjd",
-  age: 30,
-  role: [3, 'thid']
+userInput = 5;
+userInput = 'max';
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-// is the same as this below and better
-const persons = {
-  name: "jdjd",
-  age: 30,
-  hobbies: ['dkd', 'sport', 'chess'], //Array
-  role: [3, "author"],
-  post: 0,
-}
-for (const hobby of persons.hobbies){
-  console.log(hobby, ">>>>")
-}
-person.role.push('hee')
-person.role.push(3);
-console.log(person.role)
+//Never type
 
-//enum
-
-enum Hello {
-  ADMIN = 1,
-  SUPERADMIN
+function generateError(message: string, code: number): never {
+  throw {message, code};
+  // note throw always end our script remedy is to use try and catch
+  // while(true) {} --> never return a value
 }
-persons.post = Hello.SUPERADMIN
-console.log(persons)
-console.log(Hello.ADMIN)
+
+generateError("An error occured!", 500)
