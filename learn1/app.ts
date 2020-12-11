@@ -17,4 +17,12 @@ function generateError(message: string, code: number): never {
   // while(true) {} --> never return a value
 }
 
-generateError("An error occured!", 500)
+// generateError("An error occured!", 500)
+
+const btn = document.querySelector("button")!;
+
+function clickHandler(message: string){
+  console.log("hello " + message)
+}
+
+btn.addEventListener('click', clickHandler.bind(null, "John"));
