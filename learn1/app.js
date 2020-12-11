@@ -1,34 +1,16 @@
-var how = "tony"; // Not necessary because js infare types
-h = 3;
-console.log(how);
-console.log(h);
-// Objects
-var person = {
-    name: "jdjd",
-    age: 30,
-    role: [3, 'thid']
-};
-// is the same as this below and better
-var persons = {
-    name: "jdjd",
-    age: 30,
-    hobbies: ['dkd', 'sport', 'chess'],
-    role: [3, "author"],
-    post: 0
-};
-for (var _i = 0, _a = persons.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby);
+"use strict";
+// unknow type
+var userInput;
+var userName;
+userInput = 5;
+userInput = 'max';
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-person.role.push('hee');
-person.role.push(3);
-console.log(person.role);
-//enum
-var hello;
-(function (hello) {
-    hello[hello["ADMIN"] = 0] = "ADMIN";
-    hello[hello["SUPERADMIN"] = 1] = "SUPERADMIN";
-})(hello || (hello = {}));
-persons.post = hello.SUPERADMIN;
-console.log(persons);
-console.log(hello.ADMIN);
+//Never type
+function generateError(message, code) {
+    throw { message: message, code: code };
+    // note throw always end our script remedy is to use try and catch
+    // while(true) {} --> never return a value
+}
+generateError("An error occured!", 500);
