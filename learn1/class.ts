@@ -65,6 +65,7 @@ accountingCopy.describe() // output undefine because this refers to it obj
 
 /* 
 abstract class and method  abstract descrep(): void;
+which means any class that inhert from the abstract class most implement the  abstract method, from the base class.
 
 # Singletons private contructor
 add private on the contructor
