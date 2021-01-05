@@ -41,13 +41,13 @@ type SomeName = {
 
 
 interface GetStock {
-  name?: string;
+  name?: string; //optional field
   numberOfStock(n: number): void;
 }
 
 class Inventory implements GetStock {
-  name?: string;
-  constructor(n?:string){
+  name?: string; // optional property
+  constructor(n?:string){ //optional parameter
     if(n){
       this.name = n;
     }
