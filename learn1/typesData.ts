@@ -1,4 +1,4 @@
-const how: string  = "tony"; // Not necessary because js infare types
+const how: string  = "tony"; // Not necessary because type inference
 declare let something: string; //most not be initialized
 declare let h: unknown;
 h = 3;
