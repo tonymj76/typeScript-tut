@@ -67,7 +67,7 @@ class DataStorage<T extends string| number >{
   private data: T[] = [];
 
   addItem(item: T){
-    this.data.push (item)
+    this.data.push(item)
   }
 
   removeItem(item: T){
@@ -94,6 +94,7 @@ interface CourseGoal {
 
 function giveCourseGoal(title: string, description: string, completedDate: Date){
   let courseGoal: Partial<CourseGoal> = {};
+  //Partial helps to initial an empty value then give you the ability to assign value to it letter.
   courseGoal.title = title;
   courseGoal.description = description;
   courseGoal.completedDate = completedDate;
