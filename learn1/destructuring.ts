@@ -14,5 +14,4 @@ const many = (...args: number[]) => args.reduce((c, p) => c+p)
 const many2: (...args: number[]) => number = (...d) => d.reduce((c, p)=> c+p)
 
 composite = many2
-
 printableNumber(composite(3,4,3,2,5))

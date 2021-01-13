@@ -12,7 +12,6 @@
 */
 
 //custom type
-
 type Admin = {
   name: string;
   privileges: string[];
@@ -49,9 +48,9 @@ interface Empl extends Admins, Employees {};
 function addition(a: number, b:number): number;
 function addition(a: string, b:string): string;
 function addition(a: string, b:number): string;
-function addition (a: Combinable, b: Combinable){
+function addition(a: Combinable, b: Combinable) {
   if (typeof a === 'string' || typeof b === 'string'){ // type guard
-    return a.toString() + b.toString
+    return a.toString() + b.toString()
   }
   return a+b
 }
@@ -146,6 +145,6 @@ const fetchedUserData = {
   job:{title: 'CEO', description: 'My own company'}
 }
 const usersInput = undefined;
-const storedData = usersInput ?? 'Defalut'
+const storedData = usersInput ?? 'Default'
 
 console.log(fetchedUserData?.job?.title);
