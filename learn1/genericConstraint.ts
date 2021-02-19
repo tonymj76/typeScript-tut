@@ -36,7 +36,7 @@ calling this function with merge(3, 3) will work but it won't give out result be
 */
 
 //Constraints in Generic
-function merge<T extends object,B extends object> (objA:T, objB: B) {
+function merge<T extends object, B extends object> (objA:T, objB: B) {
   return Object.assign(objA, objB)
 }
 
