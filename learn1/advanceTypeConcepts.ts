@@ -9,6 +9,7 @@
   4) Type Casting
   5) Function overloads
   6) function chaining
+  7) Unions with Comman Fields
 */
 
 //custom type
@@ -148,3 +149,55 @@ const usersInput = undefined;
 const storedData = usersInput ?? 'Default'
 
 console.log(fetchedUserData?.job?.title);
+
+// understanding Unions
+// if we have a value that is a union type we can only access members
+// that are common to all types in the union
+
+interface Hen {
+  fly(): void;
+  layEgg(): void;
+}
+
+interface Fish {
+  swin: void;
+  layEgg(): void;
+}
+
+// declare function getSmallPet(): Fish | Bird; or
+let getSmallPet: () => Fish | Bird;
+
+// Intersaction Types
+// intersaction types combines multiple types into one
+
+interface ErrorHandling {
+  success: boolean;
+  error?: {message: string}
+}
+
+interface ArtworksData {
+  artworks: {title: string}[];
+}
+
+interface ArtistsData {
+  artists: {name: string}[];
+}
+
+type ArtwordResponse = ArtworksData & ErrorHandling // this merge both interface together
+type ArtistsResponse = ArtistsData & ErrorHandling
+
+const handleArtWorkResponse = (response: ArtwordResponse) => {
+  if (response.error) {
+    console.error(response.error.message)
+    return;
+  }
+  console.log(response.artworks)
+}
+
+const handleArtistsResponse = (response: ArtistsResponse): {name: string}[] | void => {
+  if (response.error) {
+    console.error(response.error.message);
+    return;
+  }
+  return response.artists
+}
