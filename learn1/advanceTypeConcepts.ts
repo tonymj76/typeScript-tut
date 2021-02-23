@@ -45,7 +45,8 @@ interface Employees {
   stateDate: Date
 }
 interface Empl extends Admins, Employees {};
-
+// we can even provide multiple function signatures
+// "overload signatures"
 function addition(a: number, b:number): number;
 function addition(a: string, b:string): string;
 function addition(a: string, b:number): string;
