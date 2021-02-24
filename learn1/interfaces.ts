@@ -69,14 +69,14 @@ let obj2: GetStock;
 obj2 = new Inventory()
 obj2.numberOfStock(8)
 
-interface HasEmail {
-  type: "email";
+export interface HasEmail {
+  type?: "email";
   name: string;
   email: string;
 }
 
-interface HasPhoneNumber {
-  type: "phone";
+export interface HasPhoneNumber {
+  type?: "phone";
   name: string;
   phone: number;
 }
