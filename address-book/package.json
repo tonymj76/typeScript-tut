@@ -11,8 +11,12 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "build": "tsc src/index.ts --outDir lib --types node --module commonjs --target ES2017",
+    "build": "tsc src/index.ts --outDir lib --types node --module commonjs --target ES2017 -w",
     "test": "mocha"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0"
+  }
 }
