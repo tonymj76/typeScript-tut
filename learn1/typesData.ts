@@ -36,9 +36,9 @@ console.log(person.role)
 
 enum Hello {
   ADMIN = 1,
-  SUPERADMIN
+  SUPER_ADMIN
 }
-persons.post = Hello.SUPERADMIN
+persons.post = Hello.SUPER_ADMIN
 console.log(persons)
 console.log(Hello.ADMIN)
 
